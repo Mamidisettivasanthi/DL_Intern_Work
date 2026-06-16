@@ -184,7 +184,7 @@ Input batch:              X ∈ ℝ^(batch_size × features)
 
 ---
 
-![Vector and Matrix Representations in a Neural Network](Vector and Matrix Representations in a Neural Network)
+![Vector and Matrix Representations in a Neural Network](images/Vector and Matrix Representations in a Neural Network.png)
 
 ---
 
