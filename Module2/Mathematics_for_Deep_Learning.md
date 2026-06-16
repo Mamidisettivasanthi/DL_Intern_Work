@@ -87,14 +87,8 @@ Everything else is built from scratch.
 
 ---
 
-[IMAGE TITLE: Mathematics Roadmap for Deep Learning]
+Mathematics Roadmap for Deep Learning[images/Mathematics Roadmap for Deep Learning]
 
-**Image Description:**
-- Flowchart with four columns: Linear Algebra | Calculus | Probability | Neural Network Connection
-- Linear Algebra row: Vectors → Matrices → Matrix Multiplication → Dot Product → Linear Transformations → Eigenvalues
-- Calculus row: Derivatives → Partial Derivatives → Chain Rule → Gradients
-- Probability row: Events → Distributions → Gaussian → Logarithms → Softmax
-- Right column: Each row connects with arrows to its role in a neural network (Forward Pass / Backpropagation / Output Layer)
 
 ---
 
