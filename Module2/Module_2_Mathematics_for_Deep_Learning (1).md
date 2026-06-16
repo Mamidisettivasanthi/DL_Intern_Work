@@ -87,7 +87,7 @@ Everything else is built from scratch.
 
 ---
 
-![Mathematics Roadmap for Deep Learning](images/Mathematics Roadmap for Deep Learning)
+![Mathematics Roadmap for Deep Learning](images/Mathematics Roadmap for Deep Learning.png)
 
 ---
 
