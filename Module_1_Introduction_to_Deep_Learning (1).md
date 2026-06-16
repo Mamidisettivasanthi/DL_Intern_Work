@@ -81,7 +81,7 @@ Understanding Deep Learning is no longer optional for anyone working in technolo
 
 ### The AI Landscape — Concentric Circles
 
-![The AI Landscape — Concentric Circles](ai_landscape_concentric_circles.png)
+![The AI Landscape — Concentric Circles](images/ai_landscape_concentric_circles.png)
 
 ---
 
@@ -155,7 +155,7 @@ Deep Learning models are artificial neural networks (ANNs) with many hidden laye
 
 ### AI vs ML vs DL — Venn Diagram with Examples
 
-![AI vs ML vs DL — Venn Diagram with Examples](ai_vs_ml_vs_dl_venn.png)
+![AI vs ML vs DL — Venn Diagram with Examples](images/ai_vs_ml_vs_dl_venn.png)
 
 ---
 
@@ -257,7 +257,7 @@ OpenAI's GPT-3 (175 billion parameters), Google's PaLM, Anthropic's Claude, and 
 
 ### Deep Learning Timeline — Key Milestones from 1943 to Now
 
-![Deep Learning Timeline](deep_learning_timeline.png)
+![Deep Learning Timeline](images/deep_learning_timeline.png)
 
 ---
 
@@ -297,7 +297,7 @@ Where:
 
 ### Single Artificial Neuron — The Basic Building Block of a Neural Network
 
-![Single Artificial Neuron](single_artificial_neuron.png)
+![Single Artificial Neuron](images/single_artificial_neuron.png)
 
 ---
 
@@ -320,7 +320,7 @@ Input Layer → Hidden Layer 1 → Hidden Layer 2 → ... → Output Layer
 
 ### Multi-Layer Feedforward Neural Network — Information Flow from Input to Output
 
-![Multi-Layer Feedforward Neural Network](multi_layer_feedforward_nn.png)
+![Multi-Layer Feedforward Neural Network](images/multi_layer_feedforward_nn.png)
 
 ---
 
@@ -536,7 +536,7 @@ For each epoch:
 
 ### Training and Validation Loss Curves — How Loss Changes During Training
 
-![Training and Validation Loss Curves](training_validation_loss_curves.png)
+![Training and Validation Loss Curves](images/training_validation_loss_curves.png)
 
 ---
 
@@ -686,7 +686,7 @@ model = SimpleNet()
 
 ### ML Framework Ecosystem — From Your Model to Deployment
 
-![ML Framework Ecosystem](ml_framework_ecosystem.png)
+![ML Framework Ecosystem](images/ml_framework_ecosystem.png)
 
 ---
 
@@ -1046,7 +1046,7 @@ When trained on new tasks, deep networks forget previously learned tasks. Contin
 
 ### Deep Learning Mind Map — Complete Module Summary
 
-![Deep Learning Mind Map](deep_learning_mindmap.png)
+![Deep Learning Mind Map]images/(deep_learning_mindmap.png)
 
 ---
 
@@ -1090,6 +1090,4 @@ When trained on new tasks, deep networks forget previously learned tasks. Contin
 
 ---
 
-*Document prepared for B.E. AIML Placement Preparation — Module 1: Introduction to Deep Learning.*
 
-*Next Module: Perceptrons, Activation Functions, and Training Fundamentals.*
