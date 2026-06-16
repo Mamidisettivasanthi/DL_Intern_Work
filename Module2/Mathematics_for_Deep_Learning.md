@@ -277,7 +277,7 @@ Where X ∈ ℝ^(B×n) is a batch of B data samples. All B samples are processed
 
 ---
 
-![Matrix Multiplication in a Neural Network Forward Pass](Matrix Multiplication in a Neural Network Forward Pass)
+![Matrix Multiplication in a Neural Network Forward Pass](images/Matrix_Multiplication_in_a_Neural_Network_Forward_Pass.png)
 
 ---
 
@@ -368,7 +368,7 @@ Used to find similar words, sentences, or images in embedding space.
 
 ---
 
-![Dot Product Geometry and Neural Network Connection](Dot Product Geometry and Neural Network Connection)
+![Dot Product Geometry and Neural Network Connection](images/Dot_Product_Geometry_and_Neural_Network_Connection.png)
 
 ---
 
@@ -452,7 +452,7 @@ No matter how many linear layers you stack, the result is equivalent to a single
 
 ---
 
-![Linear Transformations — Geometric Visualisation](Linear Transformations — Geometric Visualisation)
+![Linear Transformations — Geometric Visualisation](images/Linear_Transformations_Geometric_Visualisation.png)
 
 ---
 
@@ -537,7 +537,7 @@ This insight directly motivates architectures like LSTMs (Long Short-Term Memory
 
 ---
 
-![Eigenvectors and Eigenvalues — Visual Intuition](Eigenvectors and Eigenvalues — Visual Intuition)
+![Eigenvectors and Eigenvalues — Visual Intuition](images/Eigenvectors_and_Eigenvalues_Visual_Intuition.png)
 
 ---
 
@@ -619,7 +619,7 @@ Maximum gradient is 1 (at x = 0), compared to sigmoid's 0.25. Still can vanish f
 
 ---
 
-![Derivatives of Common Activation Functions](Derivatives of Common Activation Functions)
+![Derivatives of Common Activation Functions](images/Derivatives_of_Common_Activation_Functions.png)
 
 ---
 
@@ -768,7 +768,7 @@ The weight w increased from 0.5 to 0.58, which will increase z and a, moving the
 
 ---
 
-![Backpropagation as Chain Rule — Forward and Backward Pass](Backpropagation as Chain Rule — Forward and Backward Pass)
+![Backpropagation as Chain Rule — Forward and Backward Pass](images/Backpropagation_as_Chain_Rule_Forward_and_Backward_Pass.png)
 
 ---
 
@@ -845,7 +845,7 @@ Modern deep networks are so over-parameterised that local minima are rarely a pr
 
 ---
 
-![Gradient Descent on a 3D Loss Landscape](Gradient Descent on a 3D Loss Landscape)
+![Gradient Descent on a 3D Loss Landscape](images/Gradient_Descent_on_a_3D_Loss_Landscape.png)
 
 ---
 
@@ -943,7 +943,7 @@ Minimising the **negative log-likelihood** is equivalent to MLE — and this is 
 
 ---
 
-![Probability Concepts in Neural Network Output](Probability Concepts in Neural Network Output)
+![Probability Concepts in Neural Network Output](images/Probability_Concepts_in_Neural_Network_Output.png)
 
 ---
 
@@ -1026,7 +1026,7 @@ Where Σ (Sigma, not summation here) is the **covariance matrix**. The diagonal 
 
 ---
 
-![Gaussian Distribution and Deep Learning Applications](Gaussian Distribution and Deep Learning Applications)
+![Gaussian Distribution and Deep Learning Applications](images/Gaussian_Distribution_and_Deep_Learning_Applications.png)
 
 ---
 
@@ -1113,7 +1113,7 @@ Setting c = max makes all exponents ≤ 0, preventing overflow. PyTorch's `F.cro
 
 ---
 
-![Logarithm Behaviour and Cross-Entropy Loss](Logarithm Behaviour and Cross-Entropy Loss)
+![Logarithm Behaviour and Cross-Entropy Loss](images/Logarithm_Behaviour_and_Cross_Entropy_Loss.png)
 
 ---
 
@@ -1215,7 +1215,7 @@ Temperature is used in:
 
 ---
 
-![Softmax Function — Logits to Probabilities](Softmax Function — Logits to Probabilities)
+![Softmax Function — Logits to Probabilities](images/Softmax_Function_Logits_to_Probabilities.png)
 
 ---
 
@@ -1491,7 +1491,7 @@ Softmax                 Convert logits to probabilities; multi-class output
 
 ---
 
-![Deep Learning Mathematics Mind Map](Deep Learning Mathematics Mind Map)
+![Deep Learning Mathematics Mind Map](images/Deep_Learning_Mathematics_Mind_Map.png)
 
 ---
 
@@ -1540,6 +1540,4 @@ Softmax                 Convert logits to probabilities; multi-class output
 
 ---
 
-*Document prepared for B.E. AIML Placement Preparation — Module 2: Mathematics for Deep Learning.*
 
-*Next Module: Perceptrons, Activation Functions, and Training Fundamentals.*
