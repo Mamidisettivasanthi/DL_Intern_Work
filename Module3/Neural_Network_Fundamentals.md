@@ -74,7 +74,7 @@ The classical approach to AI involved handcrafted rules: IF-THEN logic, expert s
 - A bank uses neural networks to detect fraudulent transactions in milliseconds
 - A self-driving car uses deep neural networks to identify pedestrians at night
 
-[ images/Neural_Networks_in_the_Real_World.png]
+[Neural Networks in the Real World](images/Neural_Networks_in_the_Real_World.png)
 
 
 *Image Description:*
