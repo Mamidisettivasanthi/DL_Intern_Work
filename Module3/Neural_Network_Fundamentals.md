@@ -99,13 +99,7 @@ A biological neuron has four key components:
 
 The key insight: **connection strength (synaptic weight) determines how much influence one neuron has over another**. Stronger connections = more influence. Neural networks mimic this by assigning numerical weights to connections.
 
-[IMAGE PLACEHOLDER: Biological Neuron vs Artificial Neuron]
-
-*Image Description:*
-- *Left half: A biological neuron diagram with labeled dendrites (input receivers), cell body (soma), axon (output), and synapse (connection)*
-- *Right half: An artificial neuron (circle) with labeled inputs x₁, x₂, x₃ (with arrows), weights w₁, w₂, w₃ on the arrows, a summation symbol (Σ) inside the circle, an activation function (f) box after the circle, and output y*
-- *A two-headed arrow between them labeled "Analogy"*
-- *Color coding: blue for inputs, green for weights, orange for summation, red for output*
+![Biological Neuron vs Artificial Neuron](images/Biological_Neuron_vs_Artificial_Neuron.png)
 
 ## 2.2 Key Terminology
 
@@ -186,12 +180,8 @@ Points above the line → class 1; points below → class 0.
 
 **Limitation — XOR Problem:** The perceptron can only solve linearly separable problems. It cannot learn XOR because no straight line separates XOR outputs. This fundamental limitation motivated the development of multi-layer networks.
 
-[IMAGE PLACEHOLDER: Perceptron Decision Boundary and XOR Problem]
+![Perceptron Decision Boundary and XOR Problem](Perceptron_Decision_Boundary_and_XOR_Problem.png)
 
-*Image Description:*
-- *Left panel: 2D scatter plot showing two classes (circles and crosses) separated by a straight decision boundary line. Equation w₁x₁ + w₂x₂ + b = 0 shown on the line. x₁ on horizontal axis, x₂ on vertical axis.*
-- *Right panel: XOR truth table plotted on a 2D grid. Four points: (0,0)→0, (0,1)→1, (1,0)→1, (1,1)→0. Red shading shows no straight line can separate the two classes.*
-- *Caption: "Perceptron succeeds on linearly separable data (left) but fails on XOR (right)"*
 
 ## 3.4 Perceptron Learning Rule
 
@@ -301,15 +291,8 @@ Maximum gradient value = 0.25 (at z=0). This causes the **vanishing gradient pro
 - Output layer for binary classification
 - Avoid in hidden layers of deep networks
 
-[IMAGE PLACEHOLDER: Sigmoid Function Graph]
+![Sigmoid Function Graph](images/Sigmoid_Function_Graph.png)
 
-*Image Description:*
-- *x-axis: z from -6 to +6*
-- *y-axis: σ(z) from 0 to 1*
-- *S-shaped curve starting near 0 for large negative z, crossing 0.5 at z=0, approaching 1 for large positive z*
-- *Dashed horizontal lines at y=0, y=0.5, y=1*
-- *Dashed vertical line at z=0*
-- *Small inset showing the derivative curve (bell-shaped, peak at z=0, value=0.25)*
 
 ## 5.3 Hyperbolic Tangent (Tanh)
 
@@ -425,14 +408,8 @@ The model assigns 65.9% probability to class 0, 24.2% to class 1, 9.9% to class 
 | GELU | (-∞,∞) | Yes | No | Transformers, NLP |
 | Softmax | (0,1) each, sum=1 | Yes | Depends | Multiclass output |
 
-[IMAGE PLACEHOLDER: Activation Functions Comparison Graph]
+![Activation Functions Comparison Graph](images/Activation_Functions_Comparison_Graph.png)
 
-*Image Description:*
-- *Single plot with x-axis from -4 to 4 and y-axis from -1.5 to 4*
-- *Six curves in different colors: Step (black, dashed), Sigmoid (blue), Tanh (green), ReLU (red), Leaky ReLU (orange), ELU (purple)*
-- *Legend in top-left corner*
-- *Horizontal dashed line at y=0 and vertical dashed line at x=0*
-- *Title: "Comparison of Activation Functions"*
 
 ---
 
@@ -470,16 +447,8 @@ Input Layer     Hidden Layer 1    Hidden Layer 2    Output Layer
 - Layer 3: Detects parts (eyes, wheels)
 - Layer 4: Detects objects (faces, cars)
 
-[IMAGE PLACEHOLDER: Multi-Layer Neural Network Architecture]
+![Multi-Layer Neural Network Architecture](images/Multi_Layer_Neural_Network_Architecture.png)
 
-*Image Description:*
-- *Full MLP diagram showing: Input layer (4 nodes, labeled x₁ to x₄), two hidden layers (5 nodes each), output layer (3 nodes labeled ŷ₁, ŷ₂, ŷ₃)*
-- *All connections drawn between every pair of adjacent layers (fully connected)*
-- *Each connection labeled with 'w' indicating a weight*
-- *Each node labeled with the layer name and index*
-- *Activation function boxes (σ) shown inside each hidden neuron*
-- *Data flow indicated by left-to-right arrows*
-- *Color: input nodes (blue), hidden nodes (yellow), output nodes (green)*
 
 ---
 
@@ -574,17 +543,7 @@ Layer L: zᴸ = Wᴸaᴸ⁻¹ + bᴸ  →  aᴸ = f(zᴸ)
   Compute Loss L(y, ŷ)
 ```
 
-[IMAGE PLACEHOLDER: Forward Propagation Data Flow]
-
-*Image Description:*
-- *Sequential diagram showing data flowing left to right*
-- *Input vector x represented as a column vector*
-- *Matrix multiplication W¹x shown with matrix dimensions annotated*
-- *Addition of bias vector b¹ shown*
-- *Application of activation function f(z) shown as a labeled box*
-- *Process repeats for each layer*
-- *Final output ŷ compared with true label y to produce loss*
-- *Numerical values annotated at each step to match the worked example above*
+![Forward Propagation Data Flow](images/Forward_Propagation_Data_Flow.png)
 
 ---
 
@@ -697,12 +656,8 @@ Probabilistic Regression    →   Negative Log-Likelihood
 Object Detection            →   Focal Loss (variant of CE)
 ```
 
-[IMAGE PLACEHOLDER: Loss Function Curves]
+![Loss Function Curves](Loss_Function_Curves.png)
 
-*Image Description:*
-- *Two plots side by side*
-- *Left plot: MSE loss curve — parabola showing loss = (y - ŷ)² vs prediction error (y-ŷ) on x-axis. X-axis from -3 to 3, y-axis from 0 to 9. Minimum at (0,0).*
-- *Right plot: Binary Cross-Entropy curves — two curves showing -log(ŷ) for y=1 (decreasing from ∞ to 0 as ŷ goes 0→1) and -log(1-ŷ) for y=0 (increasing from 0 to ∞ as ŷ goes 0→1). X-axis labeled "Predicted probability ŷ" from 0 to 1, y-axis labeled "Loss" from 0 to 5. Legend shows y=1 in blue and y=0 in red.*
 
 ---
 
@@ -851,14 +806,8 @@ Final Evaluation on Test Set
 Model Deployment
 ```
 
-[IMAGE PLACEHOLDER: Neural Network Training Cycle]
+![Neural Network Training Cycle](Neural_Network_Training_Cycle.png)
 
-*Image Description:*
-- *Circular flowchart (cycle) showing the training loop*
-- *Nodes: Forward Pass → Compute Loss → Backward Pass (Backpropagation) → Update Weights → repeat*
-- *Outside the cycle: "Epoch counter" tracking progress*
-- *Below the cycle: "Early stopping" and "Convergence check" as exit conditions*
-- *Color: green for forward pass, red for loss computation, orange for backpropagation, blue for weight update*
 
 ---
 
@@ -1222,4 +1171,4 @@ Neural networks are computational models inspired by the biological brain. Start
 
 ---
 
-*Document Version: 1.0 | Module: 3 — Neural Networks Fundamentals | Level: Beginner to PhD*
+
