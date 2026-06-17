@@ -180,7 +180,7 @@ Points above the line → class 1; points below → class 0.
 
 **Limitation — XOR Problem:** The perceptron can only solve linearly separable problems. It cannot learn XOR because no straight line separates XOR outputs. This fundamental limitation motivated the development of multi-layer networks.
 
-![Perceptron Decision Boundary and XOR Problem](Perceptron_Decision_Boundary_and_XOR_Problem.png)
+![Perceptron Decision Boundary and XOR Problem](images/Perceptron_Decision_Boundary_and_XOR_Problem.png)
 
 
 ## 3.4 Perceptron Learning Rule
@@ -656,7 +656,7 @@ Probabilistic Regression    →   Negative Log-Likelihood
 Object Detection            →   Focal Loss (variant of CE)
 ```
 
-![Loss Function Curves](Loss_Function_Curves.png)
+![Loss Function Curves](images/Loss_Function_Curves.png)
 
 
 ---
@@ -806,7 +806,7 @@ Final Evaluation on Test Set
 Model Deployment
 ```
 
-![Neural Network Training Cycle](Neural_Network_Training_Cycle.png)
+![Neural Network Training Cycle](images/Neural_Network_Training_Cycle.png)
 
 
 ---
