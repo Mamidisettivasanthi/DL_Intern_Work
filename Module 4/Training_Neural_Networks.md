@@ -63,14 +63,8 @@ where $\theta$ represents every weight and bias in the network, and $L(\theta)$ 
 
 Every production AI system you have used — voice assistants, recommendation feeds, fraud detectors, ChatGPT-style assistants, self-driving perception stacks — was produced by exactly this training loop running for hours, days, or months on clusters of GPUs/TPUs. The dollar cost of training is dominated by how efficiently this optimization is done: a poorly tuned learning rate doesn't just slow convergence, it can waste tens of thousands of dollars in compute for large models. This is why "training infrastructure" and "optimization" roles are among the highest-paid specializations in AI engineering.
 
-[IMAGE PLACEHOLDER: The Loss Landscape and the Optimization Journey]
+![The Loss Landscape and the Optimization Journey](images/The_Loss_Landscape_and_the_Optimization_Journey.png)
 
-**Image Description:**
-* A 3D surface plot resembling mountainous terrain, representing the loss function $L(\theta)$ over two parameter dimensions (for visualization, even though real networks have millions of dimensions).
-* Multiple valleys of different depths: a shallow "local minimum" valley and a deeper "global minimum" valley, plus a flat "saddle point" region and a "plateau" region.
-* A dotted path with arrows starting from a random high point ("random initialization") winding down toward the deepest valley, representing the trajectory gradient descent takes across iterations.
-* Small labeled markers along the path: "Step 1," "Step 10," "Step 100," showing progressively smaller steps as the path approaches the minimum.
-* A legend explaining: red dot = current parameter position, blue arrow = gradient direction (steepest ascent), green arrow = negative gradient (direction actually taken).
 
 ---
 
@@ -121,13 +115,8 @@ Consider a toy 1-parameter model: predict $\hat{y} = \theta \cdot x$, with loss 
 
 This single-variable example scales conceptually to networks with billions of parameters — the math is identical, just applied to a vector $\theta$ instead of a scalar.
 
-[IMAGE PLACEHOLDER: Parameter Space and Loss Surface for a Single Parameter]
+![Parameter Space and Loss Surface for a Single Parameter](images/Parameter_Space_and_Loss_Surface_for_a_Single_Parameter.png)
 
-**Image Description:**
-* A simple 2D plot: x-axis labeled $\theta$ (parameter value), y-axis labeled $L(\theta)$ (loss value), forming a parabola (since the loss here is quadratic).
-* A marked starting point at $\theta_0 = 1$, high on the parabola.
-* A sequence of dots descending along the curve toward the minimum at $\theta^* = 5$, each labeled with the iteration number.
-* Tangent line segments drawn at each point showing the local slope (gradient), with arrows showing the direction of the update (opposite to the slope).
 
 ---
 
@@ -184,14 +173,8 @@ On every iteration, the network sees a mini-batch, makes predictions, measures e
 | Backward Pass | Chain-rule gradient computation (reverse-mode autodiff) | Roughly 2× the forward pass cost |
 | Optimizer Step | Elementwise parameter update | Number of parameters (negligible compute, but memory-heavy for Adam-style optimizers, which store extra state per parameter) |
 
-[IMAGE PLACEHOLDER: Neural Network Training Loop Architecture]
+![Neural Network Training Loop Architecture](images/Neural_Network_Training_Loop_Architecture.png)
 
-**Image Description:**
-* A circular/cyclic flowchart (not a straight line) showing the training loop as a repeating cycle.
-* Six boxes arranged in a circle, connected by arrows in clockwise order: "Data Loader" → "Forward Pass" → "Loss Computation" → "Backward Pass (Backprop)" → "Optimizer Update" → back to "Data Loader" for the next batch.
-* A side annotation showing "Mini-batch in" feeding into the Data Loader box and "Updated weights θ" looping out of the Optimizer box back into the Forward Pass box, emphasizing that the same parameters are reused and refined every iteration.
-* An outer dotted ring labeled "One Epoch = One full revolution through all mini-batches in the dataset," with tick marks indicating multiple iterations make up one epoch.
-* A small inset box showing GPU/TPU icon next to "Forward Pass" and "Backward Pass," indicating these are the most compute-intensive stages.
 
 ---
 
@@ -238,15 +221,7 @@ Computing this exactly for every update is the **Batch Gradient Descent** approa
 
 **Why mini-batch wins in practice:** Pure batch GD is too slow (one update per full dataset pass) and memory-hungry. Pure SGD (one example) is extremely noisy and cannot exploit GPU parallelism efficiently. Mini-batch gradient descent is the practical compromise — it produces a noisy-but-useful gradient estimate cheaply, and crucially, the noise itself acts as a mild regularizer, helping the optimizer escape shallow local minima and saddle points. Note: in modern deep learning literature and frameworks, "SGD" is used loosely to refer to mini-batch gradient descent (e.g., PyTorch's `torch.optim.SGD` actually operates on mini-batches), so always clarify batch size when this term comes up in interviews.
 
-[IMAGE PLACEHOLDER: Gradient Descent Path Comparison — Batch vs. Stochastic vs. Mini-Batch]
-
-**Image Description:**
-* A 2D contour plot of a loss surface (concentric oval rings representing contour lines, like a topographic map), with the global minimum at the center.
-* Three different colored paths starting from the same point near the edge:
-  - A smooth, slightly curved path (labeled "Batch GD") moving directly and steadily toward the center.
-  - A jagged, erratic, zig-zagging path (labeled "Stochastic GD") that generally trends toward the center but bounces around significantly at every step.
-  - A path with moderate zig-zag (labeled "Mini-Batch GD") between the smoothness of batch and the noise of stochastic, also trending toward the center.
-* A small legend box explaining each color/line style.
+![Gradient Descent Path Comparison — Batch vs. Stochastic vs. Mini-Batch](images/Gradient_Descent_Path_Comparison_Batch_vs_Stochastic_vs_Mini-Batch.png)
 
 ### 4.5 Workflow
 
@@ -355,14 +330,8 @@ Modern frameworks (PyTorch, TensorFlow) implement backpropagation via **automati
 * **Backward pass:** Starting from the loss (a single scalar output node), gradients are propagated right to left, with each node applying the chain rule using its locally recorded derivative and passing the result to its parent nodes.
 * **Reverse-mode autodiff:** This right-to-left strategy is called reverse-mode automatic differentiation, and it is what makes backprop efficient for the deep-learning case of "many inputs (parameters), one output (scalar loss)" — the entire gradient vector is computed in a single backward pass, regardless of how many parameters exist.
 
-[IMAGE PLACEHOLDER: Backpropagation Computational Graph]
+![Backpropagation Computational Graph](images/Backpropagation_Computational_Graph.png)
 
-**Image Description:**
-* A small computational graph with 3 layers shown left to right: Input → Linear (W1, b1) → ReLU → Linear (W2, b2) → Sigmoid → Loss.
-* Each operation drawn as a box/node, with thin forward arrows (solid, pointing left to right) labeled with the data being passed (e.g., "z1", "a1", "z2", "ŷ").
-* A second set of arrows drawn below or in a different color (dashed, pointing right to left) labeled with gradient symbols (e.g., "δ2", "δ1", "∂L/∂W2", "∂L/∂W1"), explicitly showing the backward flow of error signals.
-* Small annotation boxes next to each backward arrow showing which chain-rule term is being applied at that step.
-* A caption at the bottom: "Forward pass computes predictions; backward pass (backpropagation) computes gradients using the chain rule, reusing intermediate values stored during the forward pass."
 
 ### 5.5 Workflow
 
@@ -720,16 +689,8 @@ $$\theta_{t+1} = \theta_t - \eta \left( \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \eps
 | **Adam** | Yes | Yes | 2× ($m$ and $v$) | Default for NLP/transformers; fast, robust convergence with minimal tuning | Can generalize slightly worse than well-tuned SGD+Momentum on some vision tasks; weight decay interaction issue (fixed by AdamW) |
 | **AdamW** | Yes | Yes | 2× ($m$ and $v$) | De facto standard for transformer pretraining (BERT, GPT, ViT) | Still requires tuning $\lambda$ (weight decay) and learning rate schedule carefully |
 
-[IMAGE PLACEHOLDER: Optimizer Trajectory Comparison on a Ravine-Shaped Loss Surface]
+![Optimizer Trajectory Comparison on a Ravine-Shaped Loss Surface](images/Optimizer_Trajectory_Comparison_on_a_Ravine_Shaped_Loss_Surface.png)
 
-**Image Description:**
-* A 2D contour plot showing an elongated, ravine-shaped loss surface (elliptical contour lines, much narrower in one direction than the other), minimum at the center.
-* Four colored trajectory paths starting from the same point on one side of the ravine wall:
-  - "SGD" (red): a heavily zig-zagging path bouncing between the ravine walls, making slow net progress toward the center.
-  - "SGD+Momentum" (orange): a smoother, less zig-zaggy path that builds speed along the ravine floor and reaches the center faster.
-  - "RMSProp" (blue): a path that quickly dampens oscillation across the narrow direction but moves steadily along the wide direction.
-  - "Adam" (green): the most direct, smooth path of the four, combining damped oscillation with accelerated movement, reaching the center fastest.
-* A legend mapping colors to optimizer names, and an arrow at the bottom labeled "Iterations →" to show this is a path traced over time.
 
 ### 8.8 Workflow: Choosing and Using an Optimizer
 
@@ -940,15 +901,8 @@ This section ties together every concept from Sections 4–9 into the complete, 
    Export model → Optimize for inference → Serve in production
 ```
 
-[IMAGE PLACEHOLDER: End-to-End Neural Network Training Pipeline]
+![End-to-End Neural Network Training Pipeline](images/End_to_End_Neural_Network_Training_Pipeline.png)
 
-**Image Description:**
-* A horizontal pipeline diagram with 6 major stage boxes connected left to right by arrows: "Data Prep" → "Model + Init" → "Training Loop (Forward/Backprop/Optimizer)" → "Validation & Monitoring" → "Early Stopping Check" → "Deployment."
-* Below the "Training Loop" box, a zoomed-in inset circular diagram (matching Section 3's training loop figure) showing the repeating forward/backward/update cycle, with a small loop-arrow icon indicating it repeats many times within that single pipeline stage.
-* Small icon annotations: a gear icon next to "Model + Init" (representing configuration), a magnifying glass icon next to "Validation & Monitoring" (representing diagnosis), and a rocket icon next to "Deployment."
-* A dotted feedback arrow looping from "Validation & Monitoring" back to "Training Loop," labeled "continue training," and a second dotted arrow from "Early Stopping Check" back to "Model + Init," labeled "if hyperparameters need retuning."
-
----
 
 ## 11. Implementation Perspective
 
@@ -1010,12 +964,8 @@ Ranking and recommendation models (e.g., for video, e-commerce, or social feeds)
 ### Application 4: Speech Recognition and Audio Models
 Sequence models for speech-to-text rely heavily on gradient clipping (to handle occasional exploding gradients common in recurrent/attention-based sequence architectures), orthogonal or scaled initialization for stability over long sequences, and Adam-family optimizers combined with warmup schedules to handle the high variance of mini-batch gradients from variable-length audio inputs.
 
-[IMAGE PLACEHOLDER: Training Concepts Mapped Across Four Application Domains]
+![Training Concepts Mapped Across Four Application Domains](images/Training_Concepts-Mapped_Across_Four_Application_Domains.png)
 
-**Image Description:**
-* A 2×2 grid layout, each quadrant labeled with one application domain: "LLM Pretraining," "Computer Vision," "Recommendation Systems," "Speech Recognition."
-* Inside each quadrant, a small icon representing the domain (a chat bubble for LLMs, a camera for vision, a thumbs-up/shopping cart for recommendations, a microphone for speech) alongside three small labeled tags listing that domain's typical optimizer, initialization scheme, and learning rate strategy (e.g., for LLM Pretraining: "AdamW," "Scaled Init," "Warmup+Cosine").
-* A connecting center circle labeled "Core Training Concepts (Sections 4–9)" with thin lines radiating out to each of the four quadrants, visually reinforcing that the same underlying toolkit applies across very different domains.
 
 ---
 
