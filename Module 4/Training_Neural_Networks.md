@@ -221,7 +221,7 @@ Computing this exactly for every update is the **Batch Gradient Descent** approa
 
 **Why mini-batch wins in practice:** Pure batch GD is too slow (one update per full dataset pass) and memory-hungry. Pure SGD (one example) is extremely noisy and cannot exploit GPU parallelism efficiently. Mini-batch gradient descent is the practical compromise — it produces a noisy-but-useful gradient estimate cheaply, and crucially, the noise itself acts as a mild regularizer, helping the optimizer escape shallow local minima and saddle points. Note: in modern deep learning literature and frameworks, "SGD" is used loosely to refer to mini-batch gradient descent (e.g., PyTorch's `torch.optim.SGD` actually operates on mini-batches), so always clarify batch size when this term comes up in interviews.
 
-![Gradient Descent Path Comparison — Batch vs. Stochastic vs. Mini-Batch](images/Gradient_Descent_Path_Comparison_Batch_vs_Stochastic_vs_Mini-Batch.png)
+![Gradient Descent Path Comparison — Batch vs. Stochastic vs. Mini-Batch](images/Gradient_Descent_Path_Comparison_Batch_vs_Stochastic_vs_Mini_Batch.png)
 
 ### 4.5 Workflow
 
@@ -964,7 +964,7 @@ Ranking and recommendation models (e.g., for video, e-commerce, or social feeds)
 ### Application 4: Speech Recognition and Audio Models
 Sequence models for speech-to-text rely heavily on gradient clipping (to handle occasional exploding gradients common in recurrent/attention-based sequence architectures), orthogonal or scaled initialization for stability over long sequences, and Adam-family optimizers combined with warmup schedules to handle the high variance of mini-batch gradients from variable-length audio inputs.
 
-![Training Concepts Mapped Across Four Application Domains](images/Training_Concepts-Mapped_Across_Four_Application_Domains.png)
+![Training Concepts Mapped Across Four Application Domains](images/Training_Concepts_Mapped_Across_Four_Application_Domains.png)
 
 
 ---
